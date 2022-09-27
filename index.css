@@ -1,9 +1,35 @@
-.center {
+/* .center {
     
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20%;
-  }
+    margin-left: 50%;
+    margin-right: 50%;
+    margin-top: 15%;
+  } */
+
+.grid-container{
+
+  display: flex;
+  flex-direction : column;
+  justify-content:center;
+  align-items: center;
+  background-image: url(./board.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   
+
+}
+
+.row{
+
+  display: flex;
+  flex-direction: row;
+
+}
+
+.cell{
+  width: 10px;
+  height: 10px;
+  margin: 40px;
+}
   
