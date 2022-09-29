@@ -40,10 +40,14 @@ function setImg(id){
             if(userPlaying == 1){
                 let status = document.getElementById("status");
                 status.innerText = "User has won";
+                let reset_button = document.getElementById("reset_button");
+                reset_button.style.display="block";
             }
             else{
                 let status = document.getElementById("status");
                 status.innerText = "AI has won";
+                let reset_button = document.getElementById("reset_button");
+                reset_button.style.display="block";
             }
             gameIsActive=false;
         }
@@ -53,6 +57,8 @@ function setImg(id){
     if(counter == 9){
         let status = document.getElementById("status");
         status.innerText = "Its a tie !";
+        let reset_button = document.getElementById("reset_button");
+        reset_button.style.display="block";
     }
 
 }
@@ -64,6 +70,8 @@ function playAgain(){
     gameIsActive = true;
     let status = document.getElementById("status");
     status.innerText = "";
+    let reset_button = document.getElementById("reset_button");
+    reset_button.style.display="none";
 
 
     for (let i = 0;i < game_state.length;i++){

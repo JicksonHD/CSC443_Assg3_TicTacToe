@@ -5,7 +5,12 @@
     margin-right: 50%;
     width: 60px;
     
-  } 
+  }
+
+.display-button{
+
+  display: none;
+}
 
 .center-status{
 
