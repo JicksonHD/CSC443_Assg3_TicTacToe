@@ -1,10 +1,11 @@
-/* .center {
+.center {
     
     display: block;
     margin-left: 50%;
     margin-right: 50%;
-    margin-top: 15%;
-  } */
+    width: 60px;
+    
+  } 
 
 .grid-container{
 
