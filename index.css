@@ -7,6 +7,14 @@
     
   } 
 
+.center-status{
+
+  display: block;
+  margin-left: 50%;
+  margin-right: 50%;
+  width: 140px;
+}
+
 .grid-container{
 
   display: flex;

@@ -1,13 +1,18 @@
 let userPlaying = 0;//0 user is playing 1 computer is playing
 let gameIsActive = true;
 let counter = 0;
+let status = document.getElementById("status");
+
 
 let game_state = [-1,-1,-1,-1,-1,-1,-1,-1,-1];
 const win_states  = [[0,1,2], [3,4,5], [6,7,8], [0,4,8], [2,4,6], [0,3,6], [1,4,7], [2,5,8]];
 
-const cells = document.querySelectorAll('.cell');
+const cells = document.querySelectorAll(".cell");
+console.log(cells);
+
 
 function setImg(id){
+
 
     let pos = document.getElementById(id);
     console.log("I clicked on position: " + pos.innerText);
@@ -32,11 +37,13 @@ function setImg(id){
     for (let win of win_states){
         if(game_state[win[0]] == game_state[win[1]] && game_state[win[0]] == game_state[win[2]] && game_state[win[1]] == game_state[win[2]] && game_state[win[0]] !=-1 ){
 
-            if(game_state[win[0]] == 1){
-                console.log("User has won");
+            if(userPlaying == 1){
+                let status = document.getElementById("status");
+                status.innerText = "User has won";
             }
             else{
-                console.log("AI has won");
+                let status = document.getElementById("status");
+                status.innerText = "AI has won";
             }
             gameIsActive=false;
         }
@@ -44,12 +51,24 @@ function setImg(id){
     }
     
     if(counter == 9){
-        console.log("Its a tie");
+        let status = document.getElementById("status");
+        status.innerText = "Its a tie !";
     }
 
 }
 
 function playAgain(){
 
-    
+    userPlaying = 0;
+    counter = 0;
+    gameIsActive = true;
+    let status = document.getElementById("status");
+    status.innerText = "";
+
+
+    for (let i = 0;i < game_state.length;i++){
+        game_state[i] = -1;
+        cells[i].style.backgroundImage = "url()";
+    }
+
 }
