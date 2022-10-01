@@ -80,3 +80,16 @@ function playAgain(){
     }
 
 }
+
+function emptyCells(){
+
+    let index_available = [];
+
+    for(let i =0 ; i < game_state.length;i++){
+        if(game_state[i] == -1){
+            index_available.push = i;
+        }
+        
+    }
+    return index_available;
+}
