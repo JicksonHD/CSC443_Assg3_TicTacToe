@@ -11,7 +11,7 @@ const cells = document.querySelectorAll(".cell");
 console.log(cells);
 
 
-function setImg(id){
+function tic(id){
 
 
     let pos = document.getElementById(id);
@@ -31,8 +31,13 @@ function setImg(id){
             pos.style.backgroundImage = "url(yellow.png)";
             counter++;
         }
-        
+
+        checkForWin();
     }
+
+}
+
+function checkForWin(){
 
     for (let win of win_states){
         if(game_state[win[0]] == game_state[win[1]] && game_state[win[0]] == game_state[win[2]] && game_state[win[1]] == game_state[win[2]] && game_state[win[0]] !=-1 ){
@@ -53,7 +58,7 @@ function setImg(id){
         }
         
     }
-    
+
     if(counter == 9){
         let status = document.getElementById("status");
         status.innerText = "Its a tie !";
@@ -61,7 +66,14 @@ function setImg(id){
         reset_button.style.display="block";
     }
 
+    emptyCells();
+
+
 }
+    
+
+
+
 
 function playAgain(){
 
@@ -87,9 +99,10 @@ function emptyCells(){
 
     for(let i =0 ; i < game_state.length;i++){
         if(game_state[i] == -1){
-            index_available.push = i;
+            index_available.push(i);
         }
         
     }
+    console.log(index_available);
     return index_available;
 }
